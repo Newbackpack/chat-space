@@ -9,11 +9,21 @@
 |password|string|null: false|
 
 ### Association
-- has_many :tweets
-- has_many :comments
+- has_many :messages
+
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|member|string|null: true|
+
+### Association
+- has_many :users
+
+
 
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -23,13 +33,16 @@
 - belongs_to :group
 - belongs_to :user
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - has_many :comments
+
+
 
