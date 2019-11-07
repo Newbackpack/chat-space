@@ -45,7 +45,7 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
+- has_many :groups, through: :groups_users
 
 
 
